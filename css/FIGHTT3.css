@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'FIGHTT3';
+    src: url('./fonts/FIGHTT3.eot');
+    src: url('./fonts/FIGHTT3.eot') format('embedded-opentype'),
+         url('./fonts/FIGHTT3.woff2') format('woff2'),
+         url('./fonts/FIGHTT3.woff') format('woff'),
+         url('./fonts/FIGHTT3.ttf') format('truetype'),
+         url('./fonts/FIGHTT3.svg#FIGHTT3') format('svg');
+}

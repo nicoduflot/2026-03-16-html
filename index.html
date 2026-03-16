@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <title>Les balises HTML | Running Women</title>
     <meta charset="UTF-8" />
@@ -9,24 +10,165 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/scripts.js"></script>
 </head>
+
 <body>
     <header role="banner">
         <span>Running Women</span>
     </header>
     <nav role="navigation">
-
+        <ul>
+            <li><a href="./index.html" title="Retourner à l'accueil">Accueil</a></li>
+            <li><a href="./univers.html" title="Aller à la page univers">Univers</a></li>
+            <li><a href="./extrait.html" title="Aller à la page extraits">Extrait</a></li>
+            <li><a href="./contact.html" title="Aller à la page formulaire">Contact</a></li>
+        </ul>
     </nav>
     <main role="main">
         <header>
             <h1>Les balises HTML</h1>
         </header>
+        <aside>
+            <nav>
+                <h2>Table des matières</h2>
+                <ol type="I">
+                    <li><a href="#balises-de-contenu-de-texte">Balises de contenus de texte</a></li>
+                    <li>
+                        <a href="#les-listes">Les listes</a>
+                        <ol>
+                            <li><a href="#les-listes-non-ordonnees">Listes non-ordonnées</a></li>
+                            <li><a href="#les-listes-ordonnees">Listes ordonnées</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </nav>
+        </aside>
         <section>
             <article>
                 <header>
-                    <h2>Balises de contenu de texte</h2>
+                    <h2 id="balises-de-contenu-de-texte">Balises de contenu de texte</h2>
                 </header>
                 <p>
-                    
+                    dès qu'on écrit un texte dans une page, il faut l'intégrer dans une balise de type paragraphe. La
+                    plupart du temps, on utilisera la balise <code>&lt;p&gt;</code>.<br />
+                    Pour faire un retour chariot, on utilisera <code>&lt;br /&gt;</code>
+                </p>
+                <p>
+                    La balise <code>&lt;p&gt;</code> permet de séparer le texte en paragraphes, de faire des sauts de
+                    lignes nécéssaires pour lire correctement le contenu.
+                </p>
+                <p>
+                    Il existe des balises pour afficher le texte en <b>gras simple</b> <code>&lt;b&gt;</code> ou en
+                    <strong>gras important (FORT)</strong> <code>&lt;strong&gt;</code>, et en <i>italique simple</i>
+                    <code>&lt;i&gt;</code> ou en <em>italique avec de l'emphase</em> <code>&lt;em&gt;</code>.
+                </p>
+                <p>
+                    &lt;strong&gt; et <code>&lt;em&gt;</code> auront un impact sur référencement alors que
+                    <code>&lt;b&gt;</code> et <code>&lt;i&gt;</code> ne seront que des indications visuelles.
+                </p>
+                <p>
+                    Les balises de mise en forme du textes sont de moins en moins nombreuses : <br />
+                    <mark>Surligner en fluo avec </mark><code>&lt;mark&gt;</code>, <s>biffer du contenu obsolète avec
+                    </s><code>&lt;s&gt;</code>, <ins cite="Nicolas Duflot" datetime="2026-01-11"> signaler du contenu
+                        ajouté avec </ins><code>&lt;ins&gt;</code>, attention, on n'utilise généralement pas les balises
+                    qui souligne le contenu comme <code>&lt;ins&gt;</code> ou <code>&lt;u&gt;</code>, car les visiteurs
+                    pourraient penser qu'il s'agit d'un lien cassé.
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="les-listes">Les listes</h2>
+                </header>
+                <h3 id="les-listes-non-ordonnees">Les listes non-ordonnées</h3>
+                <ul>
+                    <li>Un élément de liste</li>
+                    <li>Un deuxième élément de liste</li>
+                    <li>
+                        Un premier élément de liste contenant une sous-liste
+                        <ul>
+                            <li>Premier élément de la sous-liste</li>
+                            <li>Second élément de la sous-liste</li>
+                        </ul>
+                    </li>
+                    <li>Un quatrième élément</li>
+                    <li>Un cinquième élément</li>
+                    <li>
+                        Un second élément de liste contenant une sous-liste
+                        <ul>
+                            <li>Premier élément de la sous-liste</li>
+                            <li>
+                                Second élément de la sous-liste contenant une liste
+                                <ul>
+                                    <li>Élément de sous-sous-liste</li>
+                                    <li>Élément de sous-sous-liste</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3 id="les-listes-ordonnees">Les listes ordonnées</h3>
+                <ol type="I">
+                    <li>Un élément de liste</li>
+                    <li>Un deuxième élément de liste</li>
+                    <li>
+                        Un premier élément de liste contenant une sous-liste
+                        <ol>
+                            <li>Premier élément de la sous-liste</li>
+                            <li>Second élément de la sous-liste</li>
+                        </ol>
+                    </li>
+                    <li>Un quatrième élément</li>
+                    <li>Un cinquième élément</li>
+                    <li>
+                        Un second élément de liste contenant une sous-liste
+                        <ol start="3">
+                            <li>Premier élément de la sous-liste</li>
+                            <li>
+                                Second élément de la sous-liste contenant une liste
+                                <ol>
+                                    <li>Élément de sous-sous-liste</li>
+                                    <li>Élément de sous-sous-liste</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </article>
+            <article>
+                <header>
+                    <h2>D'autres balises de contenus</h2>
+                </header>
+                <h3>Les citations</h3>
+                <blockquote>
+                    <p>
+                        <q cite="https://fr.wikiquote.org/wiki/Terry_Pratchett#Les_Zinzins_d'Olive-Oued,_1990">Dans chaque vieux, il y a un jeune qui se demande ce qui s'est passé</q><br />
+                        <small><cite>Les zinzins d'Olive Oued, Terry Pratchett (tra. Patrick Couton), éd. L'Atalante, coll. "Pockect Fantasy", 2001 </cite></small>
+                    </p>
+                </blockquote>
+                <h3>Préformat</h3>
+                <pre>
+Du <b>texte</b>
+  ____
+ du__ub
+   ||
+                </pre>
+                <h3>Indices et exposants</h3>
+                <p>
+                    H<sub>2</sub>SO<sub>4</sub><sup>2-</sup>
+                </p>
+                <h3>Liste de desciption</h3>
+                <dl>
+                    <dt>Griffemort</dt>
+                    <dd>Créature immense et mortelle</dd>
+                    <dt>Cazadore</dt>
+                    <dd>Comme le griffemort, en plus ptit et qui vole</dd>
+                </dl>
+            </article>
+            <article>
+                <header>
+                    <h2>Exercice de texte</h2>
+                </header>
+                <p>
+                    Reprendre un petit document en ligne et le reproduire (paragraphes, titre, etc.)
                 </p>
             </article>
         </section>
@@ -35,4 +177,5 @@
 
     </footer>
 </body>
+
 </html>

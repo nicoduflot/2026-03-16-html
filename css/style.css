@@ -44,6 +44,10 @@ Il permet aussi de déclarer des varaibles (tailles de police, couleurs du site)
 
 /* déclarations générales */
 
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
 .site-title,
 h1,
 h2{
@@ -69,11 +73,16 @@ body{
     background-color: var(--main-site-bg-color);
 }
 
-body > header{
+body > header,
+body > footer{
     background-color: var(--header-bg-color);
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
+    padding: var(--gutter);
     color: var(--header-color);
+}
+
+body > footer ul{
+    list-style-type: none;
+    padding: 0;
 }
 
 body > nav{
@@ -92,10 +101,14 @@ body > nav ul li:not(body > nav ul li:last-child){
 }
 
 body > nav ul a,
-body > nav ul a:visited{
+body > nav ul a:visited,
+body > footer a,
+body > footer a:visited{
  color: var(--nav-link-color);
  text-decoration: none;
  display: block;
+ padding-left: var(--gutter);
+ padding-right: var(--gutter);
 }
 
 body > nav ul a:hover,
@@ -105,4 +118,85 @@ body > nav ul a:focus-visible
     outline: none;
     color: var(--header-bg-color);
     background-color: var(--nav-link-color);
+}
+
+main > header,
+main > aside,
+section article{
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+.conteneur{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media print{
+    body > nav, body > footer{
+        display: none;
+    }
+
+    @page {
+        size: landscape;
+        padding: 1cm;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .conteneur{
+        width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .conteneur{
+        width: 540px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .conteneur{
+        width: 920px;
+    }
+
+    main aside nav > ol{
+        column-count: 2;
+    }
+
+    main section{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main article{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .conteneur{
+        width: 1160px;
+    }
+
+    main aside nav > ol{
+        column-count: 3;
+    }
+
+    main article{
+        width: calc(100% / 3);
+    }
+
+}
+@media screen and (min-width: 1400px) {
+    .conteneur{
+        width: 1340px;
+    }
+
+    main aside nav > ol{
+        column-count: 4;
+    }
+
+    main article{
+        width: 25%;
+    }
 }

@@ -9,6 +9,20 @@
     <!-- C'est dans la balise Head qu'on l'on va appeler les fichiers CCS, script Javascript -->
     <link rel="stylesheet" href="./css/style.css" media="all" />
     <script src="./js/scripts.js"></script>
+    <script>
+        function playMedia(cible){
+            document.getElementById(cible).play();
+        }
+        
+        function pauseMedia(cible){
+            document.getElementById(cible).pause();
+        }
+        
+        function stopMedia(cible){
+            document.getElementById(cible).pause();
+            document.getElementById(cible).currentTime = 0;
+        }
+    </script>
 </head>
 <body>
     <header role="banner">
@@ -63,6 +77,16 @@
                     Comme il s'agit d'un media, on va utiliser <code>figure</code> afin de créer un référencement sur le
                     document audio
                 </p>
+                
+                <figure>
+                    <audio controls id="diablo">
+                        <source src="./media/audio/diablo_town.ogg" type="audio/ogg" />
+                        <source src="./media/audio/diablo_town.mp3" type="audio/mp3" />
+                    </audio>
+                    <figcaption>
+                        <button onclick="playMedia('diablo')">Lecture</button> <button onclick="pauseMedia('diablo')">Pause</button> <button onclick="stopMedia('diablo')">Stop</button>
+                    </figcaption>
+                </figure>
             </article>
             <article>
                 <header>
@@ -72,8 +96,12 @@
                     La balise <code>video</code> se comporte comme la balise audio, avec cependant quelques attributs
                     supplémentaires.
                 </p>
-
-                
+                <figure style="position: relative;">
+                    <video controls src="./media/video/Fallout-4-Launch-Trailer.mp4" muted id="video-fallout" class="img-fluid"></video>
+                    <figcaption>
+                        <button onclick="playMedia('video-fallout')">Lecture</button> <button onclick="pauseMedia('video-fallout')">Pause</button> <button onclick="stopMedia('video-fallout')">Stop</button>
+                    </figcaption>
+                </figure>
                 <p>
                     Exercice : Recréer la figure vidéo avec le lecteur pour les deux vidéos nommées "Big Buck Bunny",
                     utiliser l'id "bunny" pour l'élément vidéo

@@ -206,6 +206,12 @@ section article{
         width: 920px;
     }
 
+}
+@media screen and (min-width: 1200px) {
+    .conteneur{
+        width: 1160px;
+    }
+
     main aside nav > ol{
         column-count: 2;
     }
@@ -218,19 +224,6 @@ section article{
     main article{
         width: 50%;
     }
-}
-@media screen and (min-width: 1200px) {
-    .conteneur{
-        width: 1160px;
-    }
-
-    main aside nav > ol{
-        column-count: 3;
-    }
-
-    main article{
-        width: calc(100% / 3);
-    }
 
 }
 @media screen and (min-width: 1400px) {
@@ -239,10 +232,10 @@ section article{
     }
 
     main aside nav > ol{
-        column-count: 4;
+        column-count: 3;
     }
 
     main article{
-        width: 25%;
+        width: calc(100% / 3);
     }
 }

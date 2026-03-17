@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Media audio & vidéo | Running Women</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Toute l'actualité running | Running Women" />
+    <!-- C'est dans la balise Head qu'on l'on va appeler les fichiers CCS, script Javascript -->
+    <link rel="stylesheet" href="./css/style.css" media="all" />
+    <script src="./js/scripts.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="conteneur">
+            <span class="site-title">Running Women</span>
+        </div>
+    </header>
+    <nav role="navigation">
+        <ul class="conteneur">
+            <li><a href="./index.html" title="Retourner à l'accueil">Accueil</a></li>
+            <li><a href="./univers.html" title="Aller à la page univers">Univers</a></li>
+            <li><a href="./extrait.html" title="Aller à la page extraits">Extrait</a></li>
+            <li><a href="./contact.html" title="Aller à la page formulaire">Contact</a></li>
+        </ul>
+    </nav>
+    <main role="main" class="conteneur">
+        <header>
+            <h1>Media audio & vidéo</h1>
+        </header>
+        <aside>
+            <nav>
+                <h2>Table des matières</h2>
+                <ol type="I">
+                    <li><a href="#audio-heberge-sur-le-site">Audio hébergé sur le site</a></li>
+                    <li><a href="#video-heberge-sur-le-site">Vidéo hébergé sur le site</a></li>
+                    <li><a href="#audio-heberge-sur-un-site-tier">Audio hébergé sur un site tiers</a></li>
+                    <li><a href="#video-heberge-sur-un-site-tier">Vidéo hébergé sur un site tiers</a></li>
+                    <li><a href="#la-balise-iframe">La balise iframe</a></li>
+                </ol>
+            </nav>
+        </aside>
+        <section>
+            <article>
+                <header>
+                    <h2 id="audio-heberge-sur-le-site">Audio hébergé sur le site</h2>
+                </header>
+                <p>
+                    Pour mettre à disposition un fichier audio sur un site, on utlise la balise audio.
+                    Cette balise peut soit appeler un seul fichier, ou utiliser aussi la balise source.
+                </p>
+                <p>
+                    Utiliser plusieurs sources permet de s'adapter à la configuration de l'utilisateur. Un appareil,
+                    pour lire un fichier audio (ou vidéo) doit posséder les bon codecs.
+                </p>
+                <p>
+                    Si je met a disposition un fichier avec une extension que l'appareil ne connaît pas, j'aurais une
+                    erreur. Si je propose le
+                    même son dans des formats différents avec source, l'appareil lancera le premier fichier qu'il
+                    est capable de lire.
+                </p>
+                <p>
+                    Comme il s'agit d'un media, on va utiliser <code>figure</code> afin de créer un référencement sur le
+                    document audio
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="video-heberge-sur-le-site">Vidéo hébergé sur le site</h2>
+                </header>
+                <p>
+                    La balise <code>video</code> se comporte comme la balise audio, avec cependant quelques attributs
+                    supplémentaires.
+                </p>
+
+                
+                <p>
+                    Exercice : Recréer la figure vidéo avec le lecteur pour les deux vidéos nommées "Big Buck Bunny",
+                    utiliser l'id "bunny" pour l'élément vidéo
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="audio-heberge-sur-un-site-tier">Audio hébergé sur un site tiers</h2>
+                </header>
+                <p>
+                    La plupart des sites d'écoute audio permettent, selon les droits, de partager une chanson ou un
+                    album (ou podcast), à l'aide d'intégration d'une page ayant un lecteur audio écrit en HTML - CSS et
+                    géré généralement par du javascript.
+                </p>
+                <p>
+                    Cette page est intégrée au site via une iframe
+                </p>
+                <p>
+                    Une iframe et un cadre dans la page courante permettant d'appeler un document sur le web, qu'il soit
+                    sur le site qu'on visite ou sur un site tiers
+                </p>
+                <p>
+                    Si le serveur hébergeur di site tiers n'autorise pas le partage des document de cette façon, un
+                    erreur s'affichera à la place de l'éméent qu'on souhaite intégrer
+                </p>
+                <h3>Bandcamp</h3>
+
+                <h3>Soundcloud</h3>
+            </article>
+            <article>
+                <header>
+                    <h2 id="video-heberge-sur-un-site-tier">Vidéo hébergé sur un site tiers</h2>
+                </header>
+                <header>
+                    <h2>Vidéo hébergé sur un site tiers</h2>
+                </header>
+                <p>
+                    Les vidéo hébergées sur un site tiers le sont aussi grace aux iframes.
+                </p>
+                <h3>Youtube</h3>
+
+                
+                <h3>Dailymotion</h3>
+            </article>
+            <article>
+                <header>
+                    <h2 id="la-balise-iframe">La balise iframe</h2>
+                </header>
+                <p>
+                    L'élément iframe permet d'insérer une page internet dans le document, mais pas que, il est possible
+                    d'insérer d'autres types de fichiers, par exemple des pdf ou directement des fichiers vidéos, sons,
+                    etc.
+                </p>
+                <p>
+                    L'iframe avait un ancètre, la combinaison frameset et frame.
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="conteneur">
+            <nav>
+                <p><b>Nous découvrir</b></p>
+                <ul>
+                    <li><a href="#">À propos de Maisons du Monde</a></li>
+                    <li><a href="#">Programme de fidélité</a></li>
+                    <li><a href="#">Le Mag'</a></li>
+                    <li><a href="#">La Fondation Maisons du Monde</a></li>
+                    <li><a href="#">Nos engagements RSE</a></li>
+                    <li><a href="#">L'ARRONDI en caisse</a></li>
+                    <li><a href="#">La marketplace de Maisons du Monde</a></li>
+                    <li><a href="#">Maisons du Monde Hôtel & Suites</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <p>Infos pratiques</p>
+                <ul>
+                    <li><a href="#">Aide et contact</a></li>
+                    <li><a href="#">Tous nos magasins</a></li>
+                    <li><a href="#">*Conditions de nos offres</a></li>
+                    <li><a href="#">Entretien des meubles</a></li>
+                    <li><a href="#">Rappel produits</a></li>
+                    <li><a href="#">Avis Clients</a></li>
+                    <li><a href="#">Sécurité Produits Marketplace</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <p>
+                    Nos services
+                </p>
+                <ul>
+                    <li><a href="#">Tous nos services</a></li>
+                    <li><a href="#">Livraison</a></li>
+                    <li><a href="#">Paiement</a></li>
+                    <li><a href="#">Retours et remboursements</a></li>
+                    <li><a href="#">Nos décoratrices Rhinov</a></li>
+                    <li><a href="#">Montage de meubles</a></li>
+                    <li><a href="#">Reprise des anciens produits</a></li>
+                    <li><a href="#">Carte cadeau</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <p>
+                    Vous êtes
+                </p>
+                <ul>
+                    <li><a href="#">Investisseurs : nos données clés</a></li>
+                    <li><a href="#">Professionnel : votre espace Business</a></li>
+                    <li><a href="#">Professionnel : vos avantages exclusifs</a></li>
+                    <li><a href="#">Journalistes : nos dernières actu</a></li>
+                    <li><a href="#">Affiliés : notre programme</a></li>
+                    <li><a href="#">Vendeurs : notre marketplace</a></li>
+                    <li><a href="#">Étudiants : votre offre exclusive</a></li>
+                    <li><a href="#">Candidat : nos offres d'emploi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

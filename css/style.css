@@ -66,6 +66,57 @@ a{
     font-size: 3rem;
 }
 
+.conteneur{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-fluid{
+    max-width: 100%;
+}
+
+.vignette, .miniature{
+    width: 100px;
+    height: 100px;
+}
+
+.vignette{
+    object-fit: cover;
+    /* Object-position permet de choisir la position du cover de l'image */
+    /*object-position: left top;*/
+}
+
+.miniature{
+    object-fit: contain;
+    background-color: black;
+}
+
+.table-responsive{
+    overflow-x: auto;
+}
+
+.table-bordered td,
+.table-bordered th{
+    border-top: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+}
+
+table.table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.table tr{
+    border-bottom: 1px solid lightgrey;
+}
+
+table.table th, 
+table.table td{
+    padding: calc(var(--gutter) / 2);
+}
+
 /* déclarations de structure */
 
 body{
@@ -127,11 +178,6 @@ section article{
     padding-right: var(--gutter);
 }
 
-.conteneur{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 @media print{
     body > nav, body > footer{

@@ -32,15 +32,83 @@
             <nav>
                 <h2>Table des matières</h2>
                 <ol type="I">
-                    
+                    <li><a href="#balise-img">La balise img</a></li>
+                    <li><a href="#la-balise-picture">La balise picture</a></li>
+                    <li><a href="#la-balise-figure">La balise figure</a></li>
                 </ol>
             </nav>
         </aside>
         <section>
             <article>
                 <header>
-                    <h2></h2>
+                    <h2 id="balise-img">La balis <code>img</code></h2>
                 </header>
+                <p>
+                    La balise img est utilisée pour afficher des images
+                </p>
+                <img src="./images/beastie-boys-hello-nasty.jpg" alt="Pochette de l'album de beastie boys intitulé Hello Nasty, représentant les trois artistes du groupe dans une boîte de sardines à moitiée ouverte avec un soleil dessiné au crayon en fond" loading="lazy" class="img-fluid" />
+                <p>
+                    Il est important, quand l'image illustre du contenu, de remplir l'attribut alt, cet attribut doit servir à décrire l'image affichée.
+                </p>
+                <p>
+                    Cette description sert tout d'abord à l'accessibilité et aussi au référencement.
+                </p>
+                <p>
+                    Le nom de fichier de l'image est aussi utilisé pour le référencement.
+                </p>
+                <p>
+                    Pour éviter que le chargement d'images trop lourdes pénalise le chargement du reste du contenu, il faut mettre l'attribut "loading" de l'image à la valeur "lazy".
+                </p>
+                <p>
+                    Ainsi, lorsque le navigateur doit afficher l'image, il lance le chargement en parallèle du reste du contenu de la page.
+                </p>
+                <h3>Les vignettes</h3>
+                <p>
+                    On a parfois besoin de normer les images affichées, c'est à dire une hauteur et une largeur définie, quel que soit le format (carré, portrait ou paysage) de l'image.
+                </p>
+                <p>
+                    La propriété <code>object-fit:cover;</code>
+                </p>
+                <img src="./images/fallout-4-anniversary-edition-pc-steam-cover.jpg" class="vignette" alt="" /> 
+                <img src="./images/couverture-livre-les-regulateur-stephen-king-aka-richard-bachman.jpg" class="vignette" alt="" />
+                <p>
+                    La propriété <code>object-fit:contain;</code>
+                </p>
+                <img src="./images/fallout-4-anniversary-edition-pc-steam-cover.jpg" class="miniature" alt="" />
+                <img src="./images/couverture-livre-les-regulateur-stephen-king-aka-richard-bachman.jpg" class="miniature" alt="" />
+            </article>
+            <article>
+                <header>
+                    <h2 id="la-balise-picture">La balise <code>picture</code></h2>
+                </header>
+                <p>
+                    La balise picture va permettre d'aller chercher une image avec le format adapté selon la largeur d'affichage du site
+                </p>
+                <picture>
+                    <source srcset="./images/doc-signal-394w.png" media="(min-width: 600px)" />
+                    <source srcset="./images/doc-signal-250w.png" media="(min-width: 400px)" />
+                    <img class="img-fluid" loading="lazy" src="./images/doc-signal-200w.png" alt="" />
+                </picture>
+                <p>
+                    Dans picture on appelle la balise <code>img</code> avec l'image de base, ensuite il faut déterminer les images alternatives selon une largeur d'affichage, grace à des balises <code>source</code> avec les attributs <code>srcset</code> qui détermine l'image de remplacement et l'attribut <code>media</code> qui donne les conditions d'affichage qui déclenchent le remplacement.
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="la-balise-figure">La balise <code>figure</code></h2>
+                </header>
+                <p>
+                    La balise figure va permettre de contenir une image (ou un ensemble <code>picture</code> et <code>img</code> ) et l'associer à une légende qui permet de replacer l'image dans un contexte, et de fait de créer une entité de contenu pertinent qui améliore le référencement
+                </p>
+                <figure>
+                    <img loading="lazy" class="img-fluid" src="./images/gundam-01-header.png" alt="" />
+                    <figcaption>
+                        Wallpaper Gundam Wings
+                    </figcaption>
+                </figure>
+                <p>
+                    La balise <code>figure</code> va aussi être utilsée pour des vidéos, du son, et aussi des documents.
+                </p>
             </article>
         </section>
     </main>

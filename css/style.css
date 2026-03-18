@@ -4,6 +4,7 @@ Import de fichiers CSS
 les instructions d'import de fichiers CSS doivent IMPÉRATIVEMENT ÊTRE DÉCLARÉES DANS LES PREMIÈRES LIGNE CSS HORS COMMENTAIRE
 */
 @import url("./FIGHTT3.css");
+@import url("./roboto.css");
 @import url("./carousel.css");
 @import url("./grid.css");
 @import url("./form.css");
@@ -28,7 +29,7 @@ Il permet aussi de déclarer des varaibles (tailles de police, couleurs du site)
 */
 /* le root */
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   --font-size: 1.2rem;
   font-size: var(--font-size);
   --gutter: 0.5rem;
@@ -243,6 +244,34 @@ table.table td {
   color: var(--dark-color);
 }
 
+.btn:hover,
+.btn:focus,
+.btn:focus-visible{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.w-100{
+  width: 100%;
+}
+
+.go-top{
+  position: fixed;
+  bottom: calc(var(--gutter) / 2);
+  right: calc(var(--gutter) / 2);
+  opacity: 0.75;
+  font-size: 2rem;
+}
+
+.go-top:hover{
+  opacity: 1;
+}
+
+.go-top a:hover,
+.go-top a:focus,
+.go-top a:focus-visible{
+  outline: none;
+}
 
 /* déclarations de structure */
 
@@ -265,6 +294,10 @@ body > footer ul {
 
 body > nav {
   background-color: var(--header-bg-color);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 body > nav ul {

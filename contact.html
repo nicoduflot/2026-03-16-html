@@ -139,7 +139,7 @@
                     bouton sert à faire autre chose, généralement un comportement développé en javascript.
                 </p>
             </article>
-            <article>
+            <article class="w-100">
                 <header>
                     <h2 id="exemple-formule">Exemple de formulaire</h2>
                 </header>
@@ -154,7 +154,7 @@
                         </p>
                         <div id="info-nom" class="message message-info">
                             Veuillez entrer votre nom de famille, ce champ est obligatoire.
-                            <button type="button" onclick="toggleHidden('messageStyles')" class="btn btn-info">afficher les autres styles</button>
+                            <button type="button" onclick="toggleHidden('messageStyles')" class="btn btn-dark">afficher les autres styles</button>
                         </div>
                         <div class="hidden" id="messageStyles">
                             <div class="message message-success">
@@ -242,6 +242,10 @@
                             <label>Color</label><br />
                             <input type="color" name="color" id="color" min="0" max="10" step="0.5" value="5" onchange="getValue(this, '#colorValue')" /> <span id="colorValue">#000000</span>
                         </p>
+                        <p>
+                            <label for="message">Votre message</label><br />
+                            <textarea name="message" id="message" placeholder="Votre demande ici"></textarea>
+                        </p>
                     </fieldset>
                     <p>
                         <button type="submit" class="btn btn-success">Envoyer</button> 
@@ -314,6 +318,11 @@
             </nav>
         </div>
     </footer>
+    <aside class="go-top">
+        <nav role="navigation">
+            <a href="#top" title="Revenir en haut de la page"><i class="bi bi-arrow-up-square-fill"></i></a>
+        </nav>
+    </aside>
 </body>
 
 </html>

@@ -7,6 +7,7 @@ les instructions d'import de fichiers CSS doivent IMPÉRATIVEMENT ÊTRE DÉCLAR�
 @import url("./carousel.css");
 @import url("./grid.css");
 @import url("./form.css");
+@import url("./bootstrap-icons.css");
 /*
 dimensions les plus vues en web :
 px      =>  Pixel
@@ -182,9 +183,26 @@ table.table td {
   border-color: transparent;
 }
 
+.message::before{
+  display: inline-block;
+  font-family: 'bootstrap-icons' !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .message-info, .btn-info{
   background-color: var(--info-bg-color);
   border-color: var(--info-border-color);
+}
+
+.message-info::before{
+  content: "\F430";
 }
 
 .message-success, .btn-success{
@@ -192,14 +210,26 @@ table.table td {
   border-color: var(--success-border-color);
 }
 
+.message-success::before{
+  content: "\F26A";
+}
+
 .message-warning, .btn-warning{
   background-color: var(--warning-bg-color);
   border-color: var(--warning-border-color);
 }
 
+.message-warning::before{
+  content: "\F336";
+}
+
 .message-danger, .btn-danger{
   background-color: var(--danger-bg-color);
   border-color: var(--danger-border-color);
+}
+
+.message-danger::before{
+  content: "\F67B";
 }
 
 .message-light, .btn-light{

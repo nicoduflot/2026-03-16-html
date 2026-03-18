@@ -3,8 +3,9 @@ Import de fichiers CSS
 /!\ ATTENTION /!\
 les instructions d'import de fichiers CSS doivent IMPÉRATIVEMENT ÊTRE DÉCLARÉES DANS LES PREMIÈRES LIGNE CSS HORS COMMENTAIRE
 */
-@import url('./FIGHTT3.css');
-
+@import url("./FIGHTT3.css");
+@import url("./carousel.css");
+@import url("./grid.css");
 /*
 dimensions les plus vues en web :
 px      =>  Pixel
@@ -24,218 +25,257 @@ Le root permet de surcharger le css du navigateur avant qu'il soit interprété
 Il permet aussi de déclarer des varaibles (tailles de police, couleurs du site), afin de faciliter la maintenance et les changements
 */
 /* le root */
-:root{
-    font-family: Arial, Helvetica, sans-serif;
-    --font-size: 1.2rem;
-    font-size: var(--font-size);
-    --gutter: 0.5rem;
-    --line-height: calc( var(--font-size) * 1.3 );
-    line-height: var(--line-height);
-    scroll-behavior: smooth;
-    --main-site-bg-color: rgba(242, 242, 242, 1);
-    --main-site-bg-color-50: rgba(242, 242, 242, 0.5);
-    --header-bg-val: 51, 51, 51;
-    --header-bg-color: rgb(var(--header-bg-val));
-    --header-bg-color-50: rgba(var(--header-bg-val), 0.5);
-    --header-color: rgba(242, 242, 242, 1);
-    --nav-link-color: #d99e30;
-    --main-link-color: darkred;
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  --font-size: 1.2rem;
+  font-size: var(--font-size);
+  --gutter: 0.5rem;
+  --line-height: calc(var(--font-size) * 1.3);
+  line-height: var(--line-height);
+  scroll-behavior: smooth;
+  --main-site-bg-color: rgba(242, 242, 242, 1);
+  --main-site-bg-color-50: rgba(242, 242, 242, 0.5);
+  --header-bg-val: 51, 51, 51;
+  --header-bg-color: rgb(var(--header-bg-val));
+  --header-bg-color-50: rgba(var(--header-bg-val), 0.5);
+  --header-color: rgba(242, 242, 242, 1);
+  --nav-link-color: #d99e30;
+  --main-link-color: darkred;
 }
 
 /* déclarations générales */
 
-*, *::before, *::after{
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .site-title,
 h1,
-h2{
-    font-family: 'FIGHTT3';
-    font-weight: normal;
+h2 {
+  font-family: "FIGHTT3";
+  font-weight: normal;
 }
 
-a{
-    color: var(--main-link-color);
-    text-decoration: none;
+a {
+  color: var(--main-link-color);
+  text-decoration: none;
 }
 
 /* déclarations de classe */
 
-.site-title{
-    font-size: 3rem;
+.site-title {
+  font-size: 3rem;
 }
 
-.conteneur{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+.conteneur {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.img-fluid{
-    max-width: 100%;
+.img-fluid {
+  max-width: 100%;
 }
 
-.vignette, .miniature{
-    width: 100px;
-    height: 100px;
+.vignette,
+.miniature {
+  width: 100px;
+  height: 100px;
 }
 
-.vignette{
-    object-fit: cover;
-    /* Object-position permet de choisir la position du cover de l'image */
-    /*object-position: left top;*/
+.vignette {
+  object-fit: cover;
+  /* Object-position permet de choisir la position du cover de l'image */
+  /*object-position: left top;*/
 }
 
-.miniature{
-    object-fit: contain;
-    background-color: black;
+.miniature {
+  object-fit: contain;
+  background-color: black;
 }
 
-.table-responsive{
-    overflow-x: auto;
+.table-responsive {
+  overflow-x: auto;
 }
 
 .table-bordered td,
-.table-bordered th{
-    border-top: 1px solid lightgrey;
-    border-left: 1px solid lightgrey;
-    border-right: 1px solid lightgrey;
+.table-bordered th {
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
 }
 
-table.table{
-    border-collapse: collapse;
-    width: 100%;
+table.table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
-table.table tr{
-    border-bottom: 1px solid lightgrey;
+table.table tr {
+  border-bottom: 1px solid lightgrey;
 }
 
-table.table th, 
-table.table td{
-    padding: calc(var(--gutter) / 2);
+table.table th,
+table.table td {
+  padding: calc(var(--gutter) / 2);
+}
+
+.video {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+}
+
+.video > * {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+  border: none;
+}
+
+.video-16-9 {
+  padding-bottom: 56.25%;
+}
+
+.video-max-width-300 {
+  max-width: 300px;
+}
+
+.video-4-3 {
+  padding-bottom: 75%;
 }
 
 /* déclarations de structure */
 
-body{
-    margin: 0;
-    background-color: var(--main-site-bg-color);
+body {
+  margin: 0;
+  background-color: var(--main-site-bg-color);
 }
 
 body > header,
-body > footer{
-    background-color: var(--header-bg-color);
-    padding: var(--gutter);
-    color: var(--header-color);
+body > footer {
+  background-color: var(--header-bg-color);
+  padding: var(--gutter);
+  color: var(--header-color);
 }
 
-body > footer ul{
-    list-style-type: none;
-    padding: 0;
+body > footer ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-body > nav{
-    background-color: var(--header-bg-color);
+body > nav {
+  background-color: var(--header-bg-color);
 }
 
-body > nav ul{
-    margin: 0;
-    color: var(--header-color);
-    list-style-type: none;
-    padding: 0;
+body > nav ul {
+  margin: 0;
+  color: var(--header-color);
+  list-style-type: none;
+  padding: 0;
 }
 
-body > nav ul li:not(body > nav ul li:last-child){
-    border-bottom: 1px solid var(--nav-link-color);
+body > nav ul li:not(body > nav ul li:last-child) {
+  border-bottom: 1px solid var(--nav-link-color);
 }
 
 body > nav ul a,
 body > nav ul a:visited,
 body > footer a,
-body > footer a:visited{
- color: var(--nav-link-color);
- text-decoration: none;
- display: block;
- padding-left: var(--gutter);
- padding-right: var(--gutter);
+body > footer a:visited {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  display: block;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
 body > nav ul a:hover,
 body > nav ul a:focus,
-body > nav ul a:focus-visible
-{
-    outline: none;
-    color: var(--header-bg-color);
-    background-color: var(--nav-link-color);
+body > nav ul a:focus-visible {
+  outline: none;
+  color: var(--header-bg-color);
+  background-color: var(--nav-link-color);
 }
 
 main > header,
 main > aside,
-section article{
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
+section article {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
+@media print {
+  body > nav,
+  body > footer {
+    display: none;
+  }
 
-@media print{
-    body > nav, body > footer{
-        display: none;
-    }
-
-    @page {
-        size: landscape;
-        padding: 1cm;
-    }
+  @page {
+    size: landscape;
+    padding: 1cm;
+  }
 }
 
 @media screen and (min-width: 576px) {
-    .conteneur{
-        width: 540px;
-    }
+  .conteneur {
+    width: 540px;
+  }
+
+  body > nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  body > nav ul li:not(body > nav ul li:last-child) {
+    border-right: 1px solid var(--nav-link-color);
+    border-bottom: unset;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .conteneur{
-        width: 540px;
-    }
+  .conteneur {
+    width: 720px;
+  }
 }
 @media screen and (min-width: 992px) {
-    .conteneur{
-        width: 920px;
-    }
-
+  .conteneur {
+    width: 960px;
+  }
 }
 @media screen and (min-width: 1200px) {
-    .conteneur{
-        width: 1160px;
-    }
+  .conteneur {
+    width: 1140px;
+  }
 
-    main aside nav > ol{
-        column-count: 2;
-    }
+  main aside nav > ol {
+    column-count: 2;
+  }
 
-    main section{
-        display: flex;
-        flex-wrap: wrap;
-    }
+  main section {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    main article{
-        width: 50%;
-    }
-
+  main article {
+    width: 50%;
+  }
 }
 @media screen and (min-width: 1400px) {
-    .conteneur{
-        width: 1340px;
-    }
+  .conteneur {
+    width: 1340px;
+  }
 
-    main aside nav > ol{
-        column-count: 3;
-    }
+  main aside nav > ol {
+    column-count: 3;
+  }
 
-    main article{
-        width: calc(100% / 3);
-    }
+  main article {
+    width: calc(100% / 3);
+  }
 }

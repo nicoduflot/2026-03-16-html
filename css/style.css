@@ -6,6 +6,7 @@ les instructions d'import de fichiers CSS doivent IMPÉRATIVEMENT ÊTRE DÉCLAR�
 @import url("./FIGHTT3.css");
 @import url("./carousel.css");
 @import url("./grid.css");
+@import url("./form.css");
 /*
 dimensions les plus vues en web :
 px      =>  Pixel
@@ -41,6 +42,23 @@ Il permet aussi de déclarer des varaibles (tailles de police, couleurs du site)
   --header-color: rgba(242, 242, 242, 1);
   --nav-link-color: #d99e30;
   --main-link-color: darkred;
+  /* couleurs de fond informatives */
+  --info-bg-color: #b4d0e8;
+  --danger-bg-color: #f1aeb5;
+  --success-bg-color: #a3cfbb;
+  --warning-bg-color: #f1d3ae;
+  /* couleurs de bordure informatives */
+  --info-border-color: #1583e3;
+  --danger-border-color: #ea2a3d;
+  --success-border-color: #07ca73;
+  --warning-border-color: #ec8a12;
+  /* couleurs de fond neutres */
+  --light-bg-color: #dddddd;
+  --dark-bg-color: #454545;
+  /* couleurs de bordure neutres */
+  --light-border-color: #666666;
+  --dark-border-color: black;
+  --dark-color: white;
 }
 
 /* déclarations générales */
@@ -153,6 +171,48 @@ table.table td {
 .hidden{
   display: none;
 }
+
+.message, .btn{
+  margin: calc( var(--gutter) / 2);
+  padding: calc( var(--gutter) / 2);
+  font-size: 0.9rem;
+  border-radius: calc( var(--gutter) / 2);
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+}
+
+.message-info, .btn-info{
+  background-color: var(--info-bg-color);
+  border-color: var(--info-border-color);
+}
+
+.message-success, .btn-success{
+  background-color: var(--success-bg-color);
+  border-color: var(--success-border-color);
+}
+
+.message-warning, .btn-warning{
+  background-color: var(--warning-bg-color);
+  border-color: var(--warning-border-color);
+}
+
+.message-danger, .btn-danger{
+  background-color: var(--danger-bg-color);
+  border-color: var(--danger-border-color);
+}
+
+.message-light, .btn-light{
+  background-color: var(--light-bg-color);
+  border-color: var(--light-border-color);
+}
+
+.message-dark, .btn-dark{
+  background-color: var(--dark-bg-color);
+  border-color: var(--dark-border-color);
+  color: var(--dark-color);
+}
+
 
 /* déclarations de structure */
 

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Les formulaire | Running Women</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Toute l'actualité running | Running Women" />
+    <!-- C'est dans la balise Head qu'on l'on va appeler les fichiers CCS, script Javascript -->
+    <link rel="stylesheet" href="./css/style.css" media="all" />
+    <script src="./js/scripts.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="conteneur">
+            <span class="site-title">Running Women</span>
+        </div>
+    </header>
+    <nav role="navigation">
+        <ul class="conteneur">
+            <li><a href="./index.html" title="Retourner à l'accueil">Accueil</a></li>
+            <li><a href="./univers.html" title="Aller à la page univers">Univers</a></li>
+            <li><a href="./extrait.html" title="Aller à la page extraits">Extrait</a></li>
+            <li><a href="./contact.html" title="Aller à la page formulaire">Contact</a></li>
+        </ul>
+    </nav>
+    <main role="main" class="conteneur">
+        <header>
+            <h1>Les formulaire</h1>
+        </header>
+        <aside>
+            <nav>
+                <h2>Table des matières</h2>
+                <ol type="I">
+                    <li><a href="#utilisation">Utilisation</a></li>
+                    <li><a href="#method">L'attribut method</a></li>
+                    <li><a href="#action">L'attribut action</a></li>
+                    <li><a href="#optionnel-enctype">Attribut optionnel : enc-type</a></li>
+                    <li><a href="#submit">L'attribut Type : Submit</a></li>
+                    <li><a href="#reset">L'attribut Type : Reset</a></li>
+                    <li><a href="#button">L'attribut Type : button</a></li>
+                    <li><a href="#exemple-formule">Exemple de formulaire</a></li>
+                </ol>
+            </nav>
+        </aside>
+        <section>
+            <article>
+                <header>
+                    <h2 id="utilisation">Utilisation</h2>
+                </header>
+                 <p>
+                    Les formulaires servent a récupérer des informations pour traitement, par exemple, un serveur
+                    php qui pourra les enregistrer en fichier, en bdd, ou les envoyer par mail.
+                </p>
+                <p>
+                    Un formulaire se déclare à l'aide de la balise <code>form</code>. Il possède des
+                    attributs, dont les plus courants et importants sont : method & action
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="method">L'attribut method</h2>
+                </header>
+                <p>
+                    method définit la façon d'envoyer les résultats
+                </p>
+                <ul>
+                    <li>
+                        GET : <br />
+                        Les données sont associées à des noms de variables, et enoyées à la page de traitement dans
+                        l'url.
+                    </li>
+                    <li>
+                        POST : <br />
+                        Les données sont transmises dans des variables dans l'entête HTTP
+                    </li>
+                </ul>
+                <p>
+                    Si la balise form est utilisée sans précision de la méthode, c'est GET qui sera utilisée par défaut
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="action">L'attribut action</h2>
+                </header>
+                <p>
+                    Indique l'url de la page de traitement des données envoyées par le formulaire.
+                    Si action n'est pas précisé, le formulaire considère que c'est la page où il
+                    se trouve qui sera la page de traitement.
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="optionnel-enctype">Attribut optionnel : enc-type</h2>
+                </header>
+                <p>
+                    Si votre formulaire doit téléverser des fichiers, il faut absolument ajouter l'attribut enctype
+                    avec la valeur enctype="multipart/form-data"
+                </p>
+                <p>
+                    De plus, à l'intérieur du formulaire, il faut ajouter un élément de formulaire "invisible" :
+                    <br />
+                    <code>&lt;input type="hidden" name="MAX_FILE_SIZE" value="30000000" /&gt;</code>
+                </p>
+                <p>
+                    value est une valeur en octets, la valeur de l'exemple précédent est un exemple.
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="submit">L'attribut Type : submit</h2>
+                </header>
+                <p>
+                    Pour pouvoir envoyer le formulaire, il faut à l'intérieur un élément clicable (un bouton, une image)
+                    qui doit posséder l'attribut type="submit". Le type submit déclenche l'envoi du formulaire dans
+                    lequel il se trouve.
+                </p>
+                <p>
+                    Par défaut, si un bouton sans type est présent dans un formulaire, quand on clique dessus, le
+                    comportement par défaut sera d'envoyer le formulaire.
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="reset">L'attribut Type : reset</h2>
+                </header>
+                <p>
+                    Si dans un bouton du formulaire, l'attribut type="reset", en cliquant dessus, toutes les
+                    informations du formulaire dans lequel il se trouve, renseignées par l'utilisateur seront
+                    effacées.
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="button">L'attribut Type : button</h2>
+                </header>
+                <p>
+                    Si dans un bouton du formulaire, l'attribut type="button", cela indique au navigateur que ce
+                    bouton sert à faire autre chose, généralement un comportement développé en javascript.
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 id="exemple-formule">Exemple de formulaire</h2>
+                </header>
+                <style>
+                    input[type="text"]:invalid,
+                    input[type="number"]:invalid,
+                    input[type="email"]:invalid{
+                        border: 3px solid red;
+                    }
+
+                    input[type="text"]:valid,
+                    input[type="number"]:valid,
+                    input[type="email"]:valid{
+                        border: 3px solid green;
+                    }
+                </style>
+                <form method="get" action="./contact.html">
+                    <fieldset>
+                        <legend>
+                            Informations personnelles
+                        </legend>
+                        <p>
+                            <label for="nom">Nom : </label> 
+                            <input name="nom" id="nom" type="text" aria-describedby="info-nom" autofocus required />
+                        </p>
+                        <div id="info-nom" class="message message-info">
+                            Veuillez entrer votre nom de famille, ce champ est obligatoire.
+                            <button type="button" onclick="toggleHidden('messageStyles')">afficher les autres styles</button>
+                        </div>
+                        <div class="hidden" id="messageStyles">
+                            <div class="message message-success">
+                                Veuillez entrez votre nom de famille, ce champ est obligatoire.
+                            </div>
+                            <div class="message message-warning">
+                                Veuillez entrez votre nom de famille, ce champ est obligatoire.
+                            </div>
+                            <div class="message message-danger">
+                                Veuillez entrez votre nom de famille, ce champ est obligatoire.
+                            </div>
+                            <div class="message message-dark">
+                                Veuillez entrez votre nom de famille, ce champ est obligatoire.
+                            </div>
+                            <div class="message message-light">
+                                Veuillez entrez votre nom de famille, ce champ est obligatoire.
+                            </div>
+                        </div>
+                        <p>
+                            <label for="prenom">Prénom :</label>
+                            <input type="text" name="prenom" id="prenom" aria-describedby="info-prenom" />
+                        </p>
+                        <div id="info-prenom" class="message message-info">
+                            Veuillez entrer votre prénom, ce champ n'est pas obligatoire.
+                        </div>
+                        <p>
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" required aria-describedby="info-email" pattern="^[\w\-\+]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,15}$" />
+                        </p>
+                        <div id="info-email" class="message message-info">
+                            Veuillez entrer votre email, ce champ est obligatoire
+                        </div>
+                        <p>
+                            <label for="age-legal">Votre âge :</label>
+                            <input type="number" name="age-legal" id="age-legal" aria-describedby="" min="13" max="99" required />
+                        </p>
+                    </fieldset>
+                    <p>
+                        <button type="submit">Envoyer</button> 
+                        <button type="reset">Vider le formulaire</button> 
+                        <button type="button" onclick="toggleHidden('toto')">Bouton d'action sur le formulaire</button>
+                        <div id="toto" class="hidden">
+                            Toto
+                        </div>
+                    </p>
+                </form>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="conteneur">
+            <nav>
+                <p><b>Nous découvrir</b></p>
+                <ul>
+                    <li><a href="#">À propos de Maisons du Monde</a></li>
+                    <li><a href="#">Programme de fidélité</a></li>
+                    <li><a href="#">Le Mag'</a></li>
+                    <li><a href="#">La Fondation Maisons du Monde</a></li>
+                    <li><a href="#">Nos engagements RSE</a></li>
+                    <li><a href="#">L'ARRONDI en caisse</a></li>
+                    <li><a href="#">La marketplace de Maisons du Monde</a></li>
+                    <li><a href="#">Maisons du Monde Hôtel & Suites</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <p>Infos pratiques</p>
+                <ul>
+                    <li><a href="#">Aide et contact</a></li>
+                    <li><a href="#">Tous nos magasins</a></li>
+                    <li><a href="#">*Conditions de nos offres</a></li>
+                    <li><a href="#">Entretien des meubles</a></li>
+                    <li><a href="#">Rappel produits</a></li>
+                    <li><a href="#">Avis Clients</a></li>
+                    <li><a href="#">Sécurité Produits Marketplace</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <p>
+                    Nos services
+                </p>
+                <ul>
+                    <li><a href="#">Tous nos services</a></li>
+                    <li><a href="#">Livraison</a></li>
+                    <li><a href="#">Paiement</a></li>
+                    <li><a href="#">Retours et remboursements</a></li>
+                    <li><a href="#">Nos décoratrices Rhinov</a></li>
+                    <li><a href="#">Montage de meubles</a></li>
+                    <li><a href="#">Reprise des anciens produits</a></li>
+                    <li><a href="#">Carte cadeau</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <p>
+                    Vous êtes
+                </p>
+                <ul>
+                    <li><a href="#">Investisseurs : nos données clés</a></li>
+                    <li><a href="#">Professionnel : votre espace Business</a></li>
+                    <li><a href="#">Professionnel : vos avantages exclusifs</a></li>
+                    <li><a href="#">Journalistes : nos dernières actu</a></li>
+                    <li><a href="#">Affiliés : notre programme</a></li>
+                    <li><a href="#">Vendeurs : notre marketplace</a></li>
+                    <li><a href="#">Étudiants : votre offre exclusive</a></li>
+                    <li><a href="#">Candidat : nos offres d'emploi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

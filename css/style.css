@@ -150,6 +150,10 @@ table.table td {
   padding-bottom: 75%;
 }
 
+.hidden{
+  display: none;
+}
+
 /* déclarations de structure */
 
 body {
